@@ -21,7 +21,31 @@ function BackupVolume({ backup, loading, setting, backingImage, dispatch, locati
   location.search = location.search ? location.search : ''
   // currentItem || currentBackupVolume. The currentItem was a wrong decision at the beginning of the design. It was originally to simplify the transfer of attributes without complete assignment.
   // When backup supports ws, currentItem will be refactored to currentBackupVolume
-  const { backupVolumes, sorter, backupFilterKey, currentItem, restoreBackupModalKey, createVolumeStandModalKey, bulkCreateVolumeStandModalKey, createVolumeStandModalVisible, bulkCreateVolumeStandModalVisible, lastBackupUrl, size, restoreBackupModalVisible, selectedRows, previousChecked, tagsLoading, nodeTags, diskTags, volumeName, backupVolumesForBulkCreate, workloadDetailModalVisible, WorkloadDetailModalKey, workloadDetailModalItem, currentBackupVolume } = backup
+  const {
+    backupVolumes,
+    sorter,
+    backupFilterKey,
+    currentItem,
+    restoreBackupModalKey,
+    createVolumeStandModalKey,
+    bulkCreateVolumeStandModalKey,
+    createVolumeStandModalVisible,
+    bulkCreateVolumeStandModalVisible,
+    lastBackupUrl,
+    size,
+    restoreBackupModalVisible,
+    selectedRows,
+    previousChecked,
+    tagsLoading,
+    nodeTags,
+    diskTags,
+    volumeName,
+    backupVolumesForBulkCreate,
+    workloadDetailModalVisible,
+    WorkloadDetailModalKey,
+    workloadDetailModalItem,
+    currentBackupVolume
+  } = backup
 
   const settings = setting.data
   const backingImages = backingImage.data
@@ -76,10 +100,6 @@ function BackupVolume({ backup, loading, setting, backingImage, dispatch, locati
       })
     },
     DeleteAllBackups(record) {
-      // dispatch({
-      //   type: 'backup/CreateStandVolume',
-      //   payload: record,
-      // })
       showDeleteConfirm(record)
     },
     showBackingImageInfo(record) {
